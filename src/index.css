@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
 body {
   margin: 0;
   padding: 0;
@@ -80,4 +81,108 @@ html {
     transform: scale(1);
   }
 
+=======
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML */
+html {
+  scroll-behavior: smooth;
+}
+
+/* BODY */
+body {
+  background: #050505;
+  color: white;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ROOT */
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* SECTION FIX */
+section {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* SELECTION */
+::selection {
+  background: white;
+  color: black;
+}
+
+/* GLASS EFFECT */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* CINEMATIC TEXT */
+.cinematic-title {
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+  text-transform: uppercase;
+}
+
+/* HERO GLOW */
+.hero-glow {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: rgba(255,255,255,0.05);
+  filter: blur(180px);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* PROJECT CARD */
+.project-card {
+  transition: all 0.7s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.06);
+}
+
+/* BUTTON HOVER */
+button {
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  transform: scale(1.04);
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.15);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.3);
+>>>>>>> 6d730ce (first commit)
 }
