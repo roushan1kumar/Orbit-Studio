@@ -97,7 +97,7 @@ function Navbar() {
                         className="
                             px-5 py-2
                             rounded-full
-                            bg-white text-black
+                            text-white/80
                             text-sm uppercase tracking-[0.15em]
                             hover:scale-105
                             transition-all duration-300

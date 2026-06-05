@@ -1,3 +1,4 @@
+import {useState} from "react";
 import Navbar from "./components/Navbar";
 import Scene from "./components/Scene";
 import BackgroundAnimation from "./components/BackgroundAnimation";
@@ -81,8 +82,12 @@ function App() {
       {/* CONTACT COMPONENT */}
 =======
 import StarBackground from "./components/StarBackground";
-
+import WorkShowcase3D from "./components/WorkShowcase3D";
+import AboutStudio from "./components/AboutStudio";
 function App() {
+  const [showWork, setShowWork] = useState(false);
+  const [showAbout, setShowAbout] = useState(false);
+
   return (
     <div className="relative bg-black text-white overflow-x-hidden">
 
@@ -151,7 +156,8 @@ function App() {
 
             <h1 className="
               cinematic-title
-              text-[15vw]
+              text-[10vw]
+              text-white/70
             ">
               Orbit
             </h1>
@@ -162,7 +168,7 @@ function App() {
 
             <h1 className="
               cinematic-title
-              text-[15vw]
+              text-[10vw]
               text-white/70
             ">
               Studio
@@ -194,32 +200,64 @@ function App() {
             mt-14
           ">
 
-            <button className="
-              px-8 py-4
-              rounded-full
-              bg-white
-              text-black
-              uppercase
-              tracking-[0.2em]
-              text-sm
-            ">
+            <button
+              onClick={() => setShowWork(true)}
+              className="
+    px-8 py-4
+    rounded-full
+    
+    text-white/80
+    uppercase
+    tracking-[0.2em]
+    text-sm
+  "
+            >
               Explore Work
             </button>
 
-            <button className="
-              px-8 py-4
-              rounded-full
-              border border-white/10
-              bg-white/5
-              backdrop-blur-xl
-              uppercase
-              tracking-[0.2em]
-              text-sm
-            ">
+            <button
+              onClick={() => setShowAbout(true)}
+              className="
+    px-8 py-4
+    rounded-full
+    border border-white/10
+    bg-white/5
+    backdrop-blur-xl
+    uppercase
+    tracking-[0.2em]
+    text-sm
+  "
+            >
               About Studio
             </button>
 
           </div>
+          {showWork && (
+            <WorkShowcase3D
+              onClose={() => {
+                setShowWork(false);
+
+                document
+                  .getElementById("home")
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+              }}
+            />
+          )}
+          {showAbout && (
+            <AboutStudio
+              onClose={() => {
+                setShowAbout(false);
+
+                document
+                  .getElementById("home")
+                  ?.scrollIntoView({
+                    behavior: "smooth",
+                  });
+              }}
+            />
+          )}
 
         </div>
 
